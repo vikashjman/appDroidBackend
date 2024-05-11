@@ -12,7 +12,7 @@ from app.crypto.prediction import *
 def setup_routes(app):
     # Set the folder where uploaded files will be stored
     upload_folder = os.path.join(os.getcwd(), 'uploads')
-    os.makedirs(upload_folder, exist_ok=True)
+    # os.makedirs(upload_folder, exist_ok=True)
     app.config['UPLOAD_FOLDER'] = upload_folder
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
