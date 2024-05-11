@@ -7,8 +7,8 @@ def send_sms(phn, msg):
     print("send_sms_reached")
 
     # Replace the defaults below with your Telesign authentication credentials or pull them from environment variables.
-    customer_id = os.getenv('CUSTOMER_ID', '5B3EF05D-AE08-4C59-B1AB-F3B7F150D009')
-    api_key = os.getenv('API_KEY', 'OSoqZy62yZgGPgIMZ0TEyY+iNgzwHAU2KMDmuyl5rFC2C+9eXe8VZ473/XYHOJkPx0ehteep4twVNLs6chHoMg==')
+    customer_id = '5B3EF05D-AE08-4C59-B1AB-F3B7F150D009'
+    api_key = 'OSoqZy62yZgGPgIMZ0TEyY+iNgzwHAU2KMDmuyl5rFC2C+9eXe8VZ473/XYHOJkPx0ehteep4twVNLs6chHoMg=='
 
     # Set the default below to your test phone number or pull it from an environment variable. 
     # In your production code, update the phone number dynamically for each transaction.
