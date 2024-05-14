@@ -2,7 +2,6 @@ import pickle
 import numpy as np
 import random
 import math
-from app.arduino.ar import *
 
 def load_model(model_file):
     """Utility function to load a pickle model."""
@@ -34,9 +33,9 @@ def hybrid_score():
     print("In hybrid_score")
     # Load both models
     try:
-        dt_model = load_model("app/ml_algo/decision_tree_model.pkl")
+        dt_model = load_model("app/ml_algo/dt_model.pkl")
         print("Decision Tree Model loaded")
-        #knn_model = load_model("app/ml_algo/knn_weight.pkl")
+        knn_model = load_model("app/ml_algo/knn_model.pkl")
         print("Models loaded")
     except Exception as e:
         print("Error loading models:", e)
@@ -46,15 +45,14 @@ def hybrid_score():
     
     # Get scores from both models
     dt_score = get_score(dt_model, data)
-    #knn_score = get_score(knn_model, data)
+    knn_score = get_score(knn_model, data)
 
     # # Print individual model scores
-    # print("Decision Tree Score:", dt_score)
-    # print("KNN Score:", knn_score)
+    print("Decision Tree Score:", dt_score)
+    print("KNN Score:", knn_score)
 
     # Calculate and print the hybrid score
-    #hybrid_score = math.floor((dt_score + knn_score) / 2)
-    hybrid_score = dt_score
+    hybrid_score = math.floor((dt_score + knn_score) / 2)
     print("Hybrid Score:", hybrid_score)
 
     return hybrid_score,data
